@@ -28,3 +28,7 @@ nav #menu ul {
 	-moz-border-radius: 5px;
 	border-radius: 5px;
 }
+
+div #image {
+	width: 40%;
+}
