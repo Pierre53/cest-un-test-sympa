@@ -1,0 +1,61 @@
+body {
+	background-color: #d8e0e5;
+	font-size: 16px;
+	line-height: 1.4;
+}
+
+.titre {
+	width: 80%;
+}
+
+nav #menu {
+	width: 95%;
+  margin: 0px 0px 0px 0px;
+  padding: 6px 6px 4px 6px;
+  height: 40px;
+  line-height: 100%;
+  border-radius: 24px;
+  -webkit-border-radius: 24px;
+  -moz-border-radius: 24px;
+  box-shadow: 2px 2px 3px #666666;
+  -webkit-box-shadow: 2px 2px 3px #666666;
+  -moz-box-shadow: 2px 2px 3px #666666;
+  background: #238B2D;
+  background: linear-gradient(top,  #2C1EA9,  #7A7A7A);
+  background: -ms-linear-gradient(top,  #2C1EA9,  #7A7A7A);
+  background: -webkit-gradient(linear, left top, left bottom, from(#2C1EA9), to(#7A7A7A));
+  background: -moz-linear-gradient(top,  #2C1EA9,  #7A7A7A);
+  border: solid 1px #5E226D;
+  position:relative;
+  z-index:999;
+}
+
+nav #menu ul {
+     margin: 0px 0px 6px 0px;
+  padding: 0px 6px 0px 6px;
+  float: left;
+  position: relative;
+  list-style: none;
+}
+
+#menu a {
+  font-weight: bold;
+  font-family: arial;
+  font-style: normal;
+  font-size: 12px;
+  color: #E7E5E5;
+  text-decoration: none;
+  display: block;
+  padding: 6px 20px 6px 20px;
+  margin: 0;
+  margin-bottom: 6px;
+  border-radius: 10px;
+  -webkit-border-radius: 10px;
+  -moz-border-radius: 10px;
+  text-shadow: 2px 2px 3px #000000;
+}
+
+div #image {
+	width: 40%;
+	text-align: center;
+}
