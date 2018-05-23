@@ -1,0 +1,11 @@
+
+  hello {{etudiant.nom}}.<br>
+  Tu as {{etudiant.age}} ans.<br>
+  <button (click)="getEtudiant()">getEtudiant</button>
+  <input [(ngModel)]="etudiant.nom"/>
+  <button (click)="saveEtudiant()">save</button>
+  <div *ngIf="etudiant.saved">Etudiant enregistré</div>
+  <!--Ce ne sont pas des variables d'instances mais des variables à courte portée. -->
+<ul *ngFor="let e of etudiants">
+  <li>{{e.nom}}</li>
+</ul>
