@@ -6,6 +6,8 @@ import { HelloComponent } from './hello/hello.component';
 import { HeaderComponent } from './header/header.component';
 import { FooterComponent } from './footer/footer.component';
 import { HAPsComponent } from './haps/haps.component';
+import { HapDetailComponent } from './hap-detail/hap-detail.component';
+import { HapService } from './_services/hap.service';
 
 @NgModule({
   declarations: [
@@ -13,12 +15,13 @@ import { HAPsComponent } from './haps/haps.component';
     HelloComponent,
     HeaderComponent,
     FooterComponent,
-    HAPsComponent
+    HAPsComponent,
+    HapDetailComponent
   ],
   imports: [
     BrowserModule, FormsModule
   ],
-  providers: [],
+  providers: [HapService],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

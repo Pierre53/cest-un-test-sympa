@@ -5,11 +5,15 @@
 <button (click)="addHap()">ajout d'un HAP</button><br>
 <input [(ngModel)]="hap.abreviation"/>
 <button (click)="addHap()">abréviation de l'HAP</button>-->
+<div *ngIf="selectedHap!=null">
+<app-hap-detail [hap]="selectedHap"></app-hap-detail>
+</div>
 <ul *ngFor="let r of liste">
   <li>{{r.nom|uppercase}} {{r.abreviation}}</li>
   <button (click)="editHap(r.id)">modifier un HAP</button>
+  <button (click)="select(r)">detail</button>
 </ul>
-<input [(ngModel)]="hap.nom"/>
-<input [(ngModel)]="hap.abreviation"/>
+<input class="hapNom" [(ngModel)]="hap.nom"/>
+<input class="hapAbreviation" [(ngModel)]="hap.abreviation"/>
 <button (click)="addHap()" *ngIf="!edit">ajouter</button>
 <button (click)="editOver()" *ngIf="edit">soumettre</button>

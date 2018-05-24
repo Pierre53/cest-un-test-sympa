@@ -4,9 +4,15 @@ export class Hap {
     public id = 0;
     public nom: string;
     public abreviation: string;
-    constructor(nom = '', abreviation = '') {
+    public nbrCycles: number;
+    public formuleChimique: string;
+    public CAS: string;
+    constructor(nom = '', abreviation = '', nbrCycles = 0, formuleChimique = '', CAS = '' ) {
         this.id = Hap.count++;
         this.nom = nom;
         this.abreviation = abreviation;
+        this.nbrCycles = nbrCycles;
+        this.formuleChimique = formuleChimique;
+        this.CAS = CAS;
     }
 }
