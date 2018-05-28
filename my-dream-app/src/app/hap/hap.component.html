@@ -1,0 +1,7 @@
+<h1>Propriétées physico-chimiques</h1>
+<div *ngIf="hap" class="propriétées">
+  Nom : {{hap.nom}};<br> Abréviation : {{hap.abreviation}};<br> Nombre de cycles : {{hap.nbrCycles}};<br> Formule chimique : {{hap.formuleChimique}};<br> CAS (Chemical Abstracts Service) : {{hap.CAS}};
+</div>
+<div *ngIf="hap" class="text-center">
+<img [src] = "'/assets/image/'+hap.photo" class="img-fluid" alt="Responsive image">
+</div>

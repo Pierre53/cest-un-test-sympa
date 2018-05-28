@@ -3,10 +3,24 @@ ul {
     list-style:none;
 }
 
-.hapNom {
-    text-align: center;
+a {
+    color :  #f70a0a;
 }
 
-.hapAbreviation {
+.formulaire {
+   text-align: center;
+   padding: 10px 0px;
+}
+.formulaire1 {
+    text-align: center;
+    padding: 10px 0px;
+}
+
+.bouton {
+    text-align: center;
+    padding: 10px 0px;
+}
+
+p {
     text-align: center;
 }
