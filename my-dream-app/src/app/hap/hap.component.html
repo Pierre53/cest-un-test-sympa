@@ -1,7 +1,24 @@
 <h1>Propriétées physico-chimiques</h1>
 <div *ngIf="hap" class="propriétées">
-  Nom : {{hap.nom}};<br> Abréviation : {{hap.abreviation}};<br> Nombre de cycles : {{hap.nbrCycles}};<br> Formule chimique : {{hap.formuleChimique}};<br> CAS (Chemical Abstracts Service) : {{hap.CAS}};
+  Nom : {{hap.nom}};<br> Abréviation : {{hap.abreviation}};<br> Nombre de cycles : {{hap.nbrCycles}};<br> 
+  Formule chimique : {{hap.formuleChimique}};<br> CAS (Chemical Abstracts Service) : {{hap.CAS}};<br>
+  Masse Molaire M [g/mol] : {{hap.MasseMolaire}};<br> Densité d [g/cm3] : {{hap.densite}};
 </div>
 <div *ngIf="hap" class="text-center">
-<img [src] = "'/assets/image/'+hap.photo" class="img-fluid" alt="Responsive image">
+  <img [src] = "'/assets/image/'+hap.photo" class="img-fluid" alt="Responsive image">
 </div>
+
+<div *ngIf="selectedHapSuivant!=null">
+  <app-suivant [hap]="selectedHapSuivant"></app-suivant>
+</div>
+<div id="right_holder">
+  <a [routerLink]="['/hap/',hap.id+1]" *ngIf="hap.id<15"><img src="assets/image/arrow_right.png" class="right"/></a>
+</div>
+
+<div *ngIf="selectedHapPrecedent!=null">
+  <app-precedent [hap]="selectedHapPrecedent"></app-precedent>
+</div>
+<div id="left_holder">
+  <a [routerLink]="['/hap/',hap.id-1]" *ngIf="hap.id>0"><img  src="assets/image/arrow_left.png" class="left"/></a>
+</div>
+

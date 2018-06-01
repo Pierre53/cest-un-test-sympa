@@ -7,14 +7,19 @@ export class Hap {
     public nbrCycles: number;
     public formuleChimique: string;
     public CAS: string;
+    public MasseMolaire: number;
+    public densite: number;
     public photo: string;
-    constructor(nom = '', abreviation = '', nbrCycles = 0, formuleChimique = '', CAS = '', photo = '') {
+    constructor(nom = '', abreviation = '', nbrCycles = 0, formuleChimique = '', CAS = '', MasseMolaire = 0,
+        densite = 0, photo = '') {
         this.id = Hap.count++;
         this.nom = nom;
         this.abreviation = abreviation;
         this.nbrCycles = nbrCycles;
         this.formuleChimique = formuleChimique;
         this.CAS = CAS;
+        this.MasseMolaire = MasseMolaire;
+        this.densite = densite;
         this.photo = photo;
     }
 }

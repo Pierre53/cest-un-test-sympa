@@ -20,12 +20,12 @@
   <button (click)="select(r)">detail</button>
 </ul>
 <div class="formulaire">
-  <p><label for="hapNom">hapNom </label>
-  <input id="hapNom" [(ngModel)]="hap.nom"/></p>>
+  <p><label for="hapNom">hapNom :</label></p>
+  <input id="hapNom" [(ngModel)]="hap.nom"/>
 </div>
 <div class="formulaire1">
-  <p><label for="hapAbreviation">hapAbreviation </label>
-  <input id="hapAbreviation" [(ngModel)]="hap.abreviation"/></p>>
+  <p><label for="hapAbreviation">hapAbreviation :</label></p>
+  <input id="hapAbreviation" [(ngModel)]="hap.abreviation"/>
 </div>
 <div class="bouton">
   <button (click)="addHap()" *ngIf="!edit">ajouter</button>

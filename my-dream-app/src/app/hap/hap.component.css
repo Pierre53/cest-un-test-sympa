@@ -12,3 +12,35 @@ h1 {
 .text-center {
     padding: 10px;
 }
+
+#left_holder{
+	width: 100%;
+	max-width: 850px;
+	height: auto;
+	left: 0;
+	top: 0;
+}
+
+#right_holder{
+	width: 100%;
+	max-width: 850px;
+	height: auto;
+	left: 0;
+	top: 0;
+}
+
+.left{
+	height: 50px;
+	width: 50px;
+	position: absolute;
+	top: 45%;
+	left: 0px;
+}
+
+.right{
+	height: 50px;
+	width: 50px;
+	position: absolute;
+	top: 45%;
+	right: 0px;
+}

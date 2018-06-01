@@ -13,10 +13,14 @@ import { ProjetsComponent } from './projets/projets.component';
 import { PresentationComponent } from './presentation/presentation.component';
 import { LocalisationComponent } from './localisation/localisation.component';
 import { HapComponent } from './hap/hap.component';
+import { PrecedentComponent } from './precedent/precedent.component';
+import { SuivantComponent } from './suivant/suivant.component';
+import { ExtractionComponent } from './extraction/extraction.component';
 
 const appRoutes: Routes = [{ path: '', component: HAPsComponent }, { path: 'hello', component: HelloComponent },
  {path: 'projets', component: ProjetsComponent}, {path: 'presentation', component: PresentationComponent},
- {path: 'localisation', component: LocalisationComponent}, {path: 'hap/:id', component: HapComponent}];
+ {path: 'localisation', component: LocalisationComponent}, {path: 'hap/:id', component: HapComponent},
+{path: 'extraction', component: ExtractionComponent}];
 
 @NgModule({
   declarations: [
@@ -29,7 +33,10 @@ const appRoutes: Routes = [{ path: '', component: HAPsComponent }, { path: 'hell
     ProjetsComponent,
     PresentationComponent,
     LocalisationComponent,
-    HapComponent
+    HapComponent,
+    PrecedentComponent,
+    SuivantComponent,
+    ExtractionComponent
   ],
   imports: [RouterModule.forRoot(appRoutes),
     BrowserModule, FormsModule
