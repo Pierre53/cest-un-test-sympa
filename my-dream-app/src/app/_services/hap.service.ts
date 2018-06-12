@@ -1,5 +1,6 @@
 import { Injectable } from '@angular/core';
 import { Hap } from '../_models';
+import { HttpClient } from '@angular/common/http';
 
 @Injectable({
   providedIn: 'root'
@@ -22,22 +23,32 @@ export class HapService {
   new Hap('Bisphénol A', 'BPA', 2, 'C15H16O2', '80-05-7', 228.2, 1.195, '14.png'),
   new Hap('β-oestradiol', 'E2', 4, 'C18H24O2', '50-28-2', 272.3, 1.170, '15.png')];
 
+  url = 'http://localhost:8080/';
 
+  constructor(private http: HttpClient) { }
 
-  constructor() { }
-
-  getHap() {
-    return this.liste;
+  getHap<T>() {
+    return this.http.get<T>(this.url + 'all');
   }
 
-  getHapByID(id: number): Hap {
+  getHapByID<T>(id: number) {
     /*for (let i = 0; i < this.liste.length; i++) {
       if (this.liste[i].id === id) {
         return this.liste[i];
       }
     }
     return null;*/
-    return this.liste.filter(a => a.id === id)[0];
+    // return this.liste.filter(a => a.id === id)[1];
+    return this.http.get<T>(this.url + 'get/' + id);
+  }
+
+  saveHap<T>(hap: Hap) {
+    return this.http.post<T>(this.url + 'addHap', hap);
+  }
+
+  editHap<T>(hap: Hap) {
+    console.log(hap);
+    return this.http.put<T>(this.url + 'editHap', hap);
   }
 
   getSuivantId(id: number) {

@@ -25,24 +25,24 @@ export class HapComponent implements OnInit {
   ngOnInit() {
     this.activatedRoute.params.subscribe(p => this.loadHap(p['id']));
     // subscribe est asynchrone, le code part tout seul.
+    this.hapService.getHapByID<Hap>(this.param).subscribe(r => this.hap = r);
   }
   loadHap(id: string) {
     this.param = +id; // le +id sert à convertir une chaîne de caratère en nombre pour l'id.
     this.hap = this.hapService.getHapByID(this.param);
     this.idsuivant = this.hapService.getSuivantId(this.param);
-    console.log(this.idsuivant);
     this.idprecedent = this.hapService.getPrecedentId(this.param);
-    console.log(this.idprecedent);
-    this.selectSuivant();
-    this.selectPrecedent();
+    // this.selectSuivant();
+    // this.selectPrecedent();
   }
 
-  selectSuivant() {
-    this.selectedHapSuivant = this.hapService.getHapByID(this.hapService.getSuivantId(this.param));
-  }
+   selectSuivant() {
+     this.hapService.getHapByID(this.hapService.getSuivantId(this.param));
+    // this.selectedHapSuivant
+   }
 
   selectPrecedent() {
-    this.selectedHapPrecedent = this.hapService.getHapByID(this.hapService.getPrecedentId(this.param));
-
+    this.hapService.getHapByID(this.hapService.getPrecedentId(this.param));
+    // this.selectedHapPrecedent
   }
 }

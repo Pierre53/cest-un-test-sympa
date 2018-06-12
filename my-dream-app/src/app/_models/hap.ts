@@ -1,7 +1,7 @@
 // Les exports permettent d'utiliser la classe en dehors du fichier
 export class Hap {
-    static count = 0;
-    public id = 0;
+    // static count = 0;
+    public id;
     public nom: string;
     public abreviation: string;
     public nbrCycles: number;
@@ -12,7 +12,7 @@ export class Hap {
     public photo: string;
     constructor(nom = '', abreviation = '', nbrCycles = 0, formuleChimique = '', CAS = '', MasseMolaire = 0,
         densite = 0, photo = '') {
-        this.id = Hap.count++;
+        // this.id = Hap.count++;
         this.nom = nom;
         this.abreviation = abreviation;
         this.nbrCycles = nbrCycles;
@@ -22,4 +22,5 @@ export class Hap {
         this.densite = densite;
         this.photo = photo;
     }
+    constructor1() {}
 }

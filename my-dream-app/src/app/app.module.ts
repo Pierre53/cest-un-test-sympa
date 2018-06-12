@@ -1,5 +1,6 @@
 import { BrowserModule } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
+import { HttpClientModule } from '@angular/common/http';
 import { FormsModule } from '@angular/forms';
 import { AppComponent } from './app.component';
 import { HelloComponent } from './hello/hello.component';
@@ -16,11 +17,13 @@ import { HapComponent } from './hap/hap.component';
 import { PrecedentComponent } from './precedent/precedent.component';
 import { SuivantComponent } from './suivant/suivant.component';
 import { ExtractionComponent } from './extraction/extraction.component';
+import { WebComponent } from './web/web.component';
+import { TestComponent } from './test/test.component';
 
 const appRoutes: Routes = [{ path: '', component: HAPsComponent }, { path: 'hello', component: HelloComponent },
- {path: 'projets', component: ProjetsComponent}, {path: 'presentation', component: PresentationComponent},
- {path: 'localisation', component: LocalisationComponent}, {path: 'hap/:id', component: HapComponent},
-{path: 'extraction', component: ExtractionComponent}];
+{ path: 'projets', component: ProjetsComponent }, { path: 'presentation', component: PresentationComponent },
+{ path: 'localisation', component: LocalisationComponent }, { path: 'hap/:id', component: HapComponent },
+{ path: 'extraction', component: ExtractionComponent }];
 
 @NgModule({
   declarations: [
@@ -36,10 +39,12 @@ const appRoutes: Routes = [{ path: '', component: HAPsComponent }, { path: 'hell
     HapComponent,
     PrecedentComponent,
     SuivantComponent,
-    ExtractionComponent
+    ExtractionComponent,
+    WebComponent,
+    TestComponent
   ],
   imports: [RouterModule.forRoot(appRoutes),
-    BrowserModule, FormsModule
+    BrowserModule, FormsModule, HttpClientModule
   ],
   providers: [HapService],
   bootstrap: [AppComponent]

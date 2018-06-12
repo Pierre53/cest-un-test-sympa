@@ -41,15 +41,27 @@ export class HAPsComponent implements OnInit {
   selectedHap: Hap;
   liste;
 
-  constructor(private hapService: HapService) {} // le private rajoute automatiquement la variable aux attributs d'instance (de la classe)
+
+  constructor(private hapService: HapService) { }
+  // le private rajoute automatiquement la variable aux attributs d'instance (de la classe)
 
   ngOnInit() {
-    this.liste = this.hapService.getHap();
+    this.hapService.getHap<Hap[]>().subscribe(r => this.liste = r);
+    // Les [] servent à préciser que l'on veut afficher la liste.
+    // this.hapService.getHapByID<Hap>(this.id).subscribe(r => this.hap = r);
   }
 
+  showReturn(r) {
+    this.liste = JSON.stringify(r);
+    console.log(r);
+    this.liste = JSON.parse(this.liste);
+  }
+
+
   addHap() {
-    this.liste.push(this.hap);
-    this.hap = new Hap();
+    this.hapService.saveHap<Hap>(this.hap).subscribe(hap => this.liste.push(hap));
+    // this.liste.push(this.hap);
+    // this.hap = new Hap();
   }
 
   editHap(id: number) {
@@ -57,7 +69,8 @@ export class HAPsComponent implements OnInit {
     this.hap = this.getHapByID(id);
     this.edit = true;
   }
-  getHapByID(id: number): Hap {
+  getHapByID(id: number) {
+    // console.log('ok');
     /*for (let i = 0; i < this.liste.length; i++) {
       if (this.liste[i].id === id) {
         return this.liste[i];
@@ -65,11 +78,13 @@ export class HAPsComponent implements OnInit {
     }
     return null;*/
     return this.liste.filter(a => a.id === id)[0];
-  }
+
+   }
 
   editOver() {
     this.edit = false;
-    this.hap = new Hap();
+    // this.hap = new Hap();
+    this.hapService.editHap<Hap>(this.hap).subscribe(hap => this.editHap(hap.id));
   }
 
   select(e: Hap) {
