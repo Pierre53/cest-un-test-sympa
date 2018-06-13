@@ -30,6 +30,7 @@ export class HapComponent implements OnInit {
   loadHap(id: string) {
     this.param = +id; // le +id sert à convertir une chaîne de caratère en nombre pour l'id.
     this.hap = this.hapService.getHapByID(this.param);
+    console.log('hap: ' + this.hap.photo + this.hap.id);
     this.idsuivant = this.hapService.getSuivantId(this.param);
     this.idprecedent = this.hapService.getPrecedentId(this.param);
     // this.selectSuivant();
